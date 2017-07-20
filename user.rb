@@ -7,22 +7,16 @@ class User
   end
 
   def tweets
-    
+    # look through all the tweets
+    Tweet.all.select do |tweet|
+       tweet.user == self
+    end
   end
 
   def post_tweet(message)
-    # # create a new tweet
-    # tweet = Tweet.new(message, self)
-    # # add that tweet to this users collection of tweets
-    # add_tweet(tweet)
+    Tweet.new(message, self)
   end
 
-
-  private
-
-  def add_tweet(tweet)
-    self.tweets << tweet
-  end
 
 
 end
