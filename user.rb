@@ -9,14 +9,16 @@ class User
 
   def tweets
     # look thru all of the tweets,
-
+    Tweet.all.select do |tweet|
+      tweet.user == self
+    end
     # find only the ones that belong to this user
+
+    # return an array of those tweets
   end
 
   def post_tweet(message)
-    # tweet = Tweet.new(message, self)
-    # self.tweets << tweet
-    # tweet
+    Tweet.new(message, self)
   end
 
 end
