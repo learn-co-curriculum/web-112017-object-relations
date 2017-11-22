@@ -1,8 +1,28 @@
 # Twitter
 
+Domain: Subject Matter of your App
+Model: A class who's primary role is to store data
+
 ## Objectives
 - Object relationships, has many/belongs to
 - Single source of truth
+
+## Overview
+### What we've seen so far
+
+class_room = ClassRoom.new('Borg')
+class_room.students
+=> ['truman', 'kelly', ...]
+
+### Where we are headed
+class_room = ClassRoom.new('Borg')
+class_room.students
+=> [<Student @name='truman'>, <Student @name='kelly'>, ...]
+class_room.students.first.class_room
+
+Student.new('leslie', class_room)
+Student.new(String.new('leslie'), class_room)
+
 
 
 ## Deliverables
